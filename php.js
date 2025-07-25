@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["Submit Order"] == "POST") {
-    $to = "festuskendrick3@gmail.com";
+    $to = "Festuskendrick3@gmail.com";
     $subject = "New Order Received";
     $orderDetails = print_r($_POST, true);
     $headers = "From: orders@yourwebsite.com";
