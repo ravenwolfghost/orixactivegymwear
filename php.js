@@ -37,8 +37,10 @@ try {
     echo 'Order details have been sent to your email!';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
-?>
+
+    ?>
 if ($orderPlacedSuccessfully) {
     include 'festuskendrick3@gmail.com';  
 }
+
+
