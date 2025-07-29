@@ -40,7 +40,7 @@ try {
 
     ?>
 if ($orderPlacedSuccessfully) {
-    include 'festuskendrick3@gmail.com';  
+    include 'festuskendrick3@gmail.com.php';  
 }
 
 
