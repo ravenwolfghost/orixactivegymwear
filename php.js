@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER["Submit Order"] == "POST") {
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -40,3 +41,6 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 ?>
+if ($orderPlacedSuccessfully) {
+    include 'festuskendrick3@gmail.com';  
+}
