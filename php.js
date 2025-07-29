@@ -1,6 +1,4 @@
 <?php
-
-if ($_SERVER["Submit Order"] == "POST") {
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
