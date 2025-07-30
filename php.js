@@ -1,46 +1,31 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+// processOrder.php
 
+// Check if POST data is received
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve the order data sent from the JavaScript
+    $orderId = isset($_POST['orderId']) ? $_POST['orderId'] : '';
+    $full name = isset($_POST['customerName']) ? $_POST['customerName'] : '';
+    $customerEmail = isset($_POST['customerEmail']) ? $_POST['customerEmail'] : '';
+    $customerEmail = isset($_POST['customerEmail']) ? $_POST['customerEmail'] : '';
 
-// Order data
-$orderDetails = "
-Order ID: $orderId
-Customer: $Full names
-Email: $email
-phone: $phone number
-select: $select product
-Items: $select size
-Address:$select address
-";
-// SMTP settings (for Gmail)
-$mail = new PHPMailer(true);
-try {
-    //Server settings
-    $mail->isSMTP();                                          
-    $mail->Host       = 'festuskendrick3@gmail.com';                        
-    $mail->SMTPAuth   = true;                                   
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;          
-    $mail->Port       = 587;                                      
+    $orderTotal = isset($_POST['orderTotal']) ? $_POST['orderTotal'] : '';
 
-    //Recipients
-    $mail->setFrom('Orixactive Gym Wear');
-    $mail->addAddress('recipient-email@example.com', 'Admin'); 
+    // Process the order (for example, store it in the database or send an email)
+    // Here, we'll just simulate processing the order and send a confirmation response
 
-    // Content
-    $mail->isHTML(false);                             
-    $mail->Subject = 'New Order Placed on Your Website';
-    $mail->Body    = "You have received a new order:\n\n" . $orderDetails;
-
-    // Send email
-    $mail->send();
-    echo 'Order details have been sent to your email!';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-
-    ?>
-if ($orderPlacedSuccessfully) {
-    include 'festuskendrick3@gmail.com.php';  
+    // Example of what you might do:
+    // 1. Validate the data
+    // 2. Store the order in a database
+    // 3. Send an email notification to the admin/customer
+    // 4. Return a success message
+    
+    // Here we're simulating that the order has been placed successfully
+    $response = "Order #$orderId has been placed successfully. Total: $orderTotal";
+    
+    // Return the response to the JavaScript function
+    echo $response;
+} else {
+    echo "Invalid request method.";
 }
-
-
+?>
